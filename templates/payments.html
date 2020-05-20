@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<!-- Marketing Icons Section -->
+<div class='container '>
+
+  <!-- Page Heading/Breadcrumbs -->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{{ url_for('index') }}">Home</a>
+      </li>
+      <li class="breadcrumb-item active">Payments</li>
+    </ol>
+
+  <div class="jumbotron bg-info">
+    <div class="row">
+    <div class="col-lg-4 mb-4">
+      <a href="https://www.venmo.com/RYAN" class="btn btn-primary btn-lg active btn-block" role="button" aria-pressed="true">Pay with Venmo</a>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <a href="https://www.cash.app/RYAN" class="btn btn-success btn-lg active btn-block" role="button" aria-pressed="true">Pay with Cash App</a>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <a href="https://paypal.me/RYAN" class="btn btn-primary btn-lg active btn-block" role="button" aria-pressed="true">Pay with Paypal</a>
+          </div>
+
+
+    </div>
+  </div>
+
+
+
+
+<div class="jumbotron">
+  <h1><p class="text-primary">Pay With Bitcoin:</p><h1>
+
+<form method="POST" action="https://btcpayjungle.com/apps/eb1B9qDSndncQ4AiByNewkqdGCM/pos">
+  <div class="row">
+    <div class="col-lg-6 mb-4 form-group">
+      <input class="form-control" type="number" min="5" name="amount" placeholder="Enter amount to pay in USD" />
+      <input type="hidden" name="email" value="customer@example.com" />
+      <input type="hidden" name="orderId" value="CustomOrderId" />
+      <input type="hidden" name="notificationUrl" value="http://RYAN.URL/thanks" />
+      <input type="hidden" name="redirectUrl" value="127.0.0.1:5000/thanks" />
+      </div>
+    <div class="col-lg-6 mb-4">
+      <button class="btn btn-primary btn-block form-control" type="submit">Pay With Bitcoin!</button>
+      </div>
+  </div>
+  </div>
+</form>
+</div>
+
+<!-- /.row -->
+{% endblock %}
